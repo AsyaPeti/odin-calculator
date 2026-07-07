@@ -42,3 +42,6 @@ const six = document.querySelector("#six");
 const seven = document.querySelector("#seven");
 const eight = document.querySelector("#eight");
 const nine = document.querySelector("#nine");
+
+// This is the variable for the display
+const display = document.querySelector("#display");
