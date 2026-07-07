@@ -17,3 +17,8 @@ function multiplication(num1, num2) {
 function division(num1, num2) {
   return num1 / num2;
 }
+
+// These are the variables and operators that will be used in the calculations
+let num1;
+let num2;
+let op;
