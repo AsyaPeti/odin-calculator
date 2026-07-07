@@ -45,3 +45,6 @@ const nine = document.querySelector("#nine");
 
 // This is the variable for the display
 const display = document.querySelector("#display");
+
+// This is the variable for the clearing button
+const clear = document.querySelector("#all-clear");
