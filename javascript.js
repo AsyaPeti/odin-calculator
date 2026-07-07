@@ -18,7 +18,15 @@ function division(num1, num2) {
   return +num1 / +num2;
 }
 
-// These are the variables and operators that will be used in the calculations
+// This function calls the calculation function based on the given operator
+function operate(num1, num2, op) {
+  if (op === "+") return addition(num1, num2);
+  if (op === "-") return subtraction(num1, num2);
+  if (op === "*") return multiplication(num1, num2);
+  if (op === "/") return division(num1, num2);
+}
+
+// These are the variables that will be used in the calculations
 let num1;
 let num2;
 let op;
