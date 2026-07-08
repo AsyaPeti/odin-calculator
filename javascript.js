@@ -43,14 +43,28 @@ buttons.addEventListener("click", (event) => {
   let targetBtn = event.target;
 
   // The actions to take when there is no values of calculating variables
-  if (!(num1 || op || num2)) {
+  if (!(+num1 || op || num2)) {
     if (targetBtn.className === "digit") {
       num1 = targetBtn.textContent;
       display.textContent = targetBtn.textContent;
     }
-  }
 
   // The actions to take when there is only num1 has a value
+  } else if (num1 && !(op || num2)) {
+    if (targetBtn.className === "digit") {
+      num1 += targetBtn.textContent;
+      display.textContent += targetBtn.textContent;
+    }
+
+    if (targetBtn.className === "operator") {
+      op = targetBtn.textContent;
+    }
+
+    if (targetBtn.id === "all-clear") {
+      num1 = null;
+      display.textContent = "";
+    }
+  }
 
   // The actions to take when there are num1 and op have values
 
