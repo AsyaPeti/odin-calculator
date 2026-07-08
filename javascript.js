@@ -83,7 +83,6 @@ buttons.addEventListener("click", (event) => {
 
     if (targetBtn.id === "calculate") {
       num2 = num1;
-      console.log(num1, op, num2);
       result = operate(num1, num2, op);
       num1 = result;
       display.textContent = result;
@@ -93,24 +92,44 @@ buttons.addEventListener("click", (event) => {
       num1 = null;
       op = null;
       display.textContent = "";
+      result = null;
     }
-  }
 
   // The actions to take when all calculating variables have values
+  } else if (num1 && op && num2) {
+    if (targetBtn.className === "digit") {
+      if (+num2) {
+        num2 += targetBtn.textContent;
+        display.textContent += targetBtn.textContent;
+      } else {
+        num2 = targetBtn.textContent;
+        display.textContent = targetBtn.textContent;
+      }
+    }
 
-  // The actions that will be taken when one of the digital buttons is clicked
-  // if (targetBtn.className === "digit") {
-  //   if (num1) num1 += targetBtn.textContent;
-  //   else num1 = targetBtn.textContent;
-  //   if (display.textContent) display.textContent += targetBtn.textContent;
-  //   else display.textContent = targetBtn.textContent;
-  // }
+    if (targetBtn.className === "operator") {
+      if (result == null || result == undefined) {
+        result = operate(num1, num2, op);
+        num1 = result;
+        display.textContent = result;
+        result = null;
+      }
+        op = targetBtn.textContent;
+        num2 = null;
+    }
 
-  // The actions will be taken when the clear button is clicked
-  // if (targetBtn.id === "all-clear") {
-  //   num1 = null;
-  //   num2 = null;
-  //   op = null;
-  //   display.textContent = "";
-  // }
+    if (targetBtn.id === "calculate") {
+      result = operate(num1, num2, op);
+      num1 = result;
+      display.textContent = result;
+    }
+
+    if (targetBtn.id === "all-clear") {
+      num1 = null;
+      op = null;
+      num2 = null;
+      display.textContent = "";
+      result = null;
+    }
+  }
 });
