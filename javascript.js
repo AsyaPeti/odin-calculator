@@ -44,11 +44,12 @@ let op;
 // const nine = document.querySelector("#nine");
 // const digits = document.querySelectorAll(".digit");
 
-// This is the variable for the display
-let display = document.querySelector("#display");
 
 // This is the variable for the clearing button
 // const clear = document.querySelector("#all-clear");
+
+// This is the variable for the display
+let display = document.querySelector("#display");
 
 // This variable is for all buttons
 const buttons = document.querySelector("#buttons");
@@ -63,5 +64,13 @@ buttons.addEventListener("click", (event) => {
     else num1 = targetBtn.textContent;
     if (display.textContent) display.textContent += targetBtn.textContent;
     else display.textContent = targetBtn.textContent;
+  }
+
+  // The actions will be taken when the clear button is clicked
+  if (targetBtn.id === "all-clear") {
+    num1 = null;
+    num2 = null;
+    op = null;
+    display.textContent = "";
   }
 });
