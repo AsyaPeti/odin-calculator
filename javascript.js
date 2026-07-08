@@ -45,10 +45,23 @@ let op;
 // const digits = document.querySelectorAll(".digit");
 
 // This is the variable for the display
-const display = document.querySelector("#display");
+let display = document.querySelector("#display");
 
 // This is the variable for the clearing button
 // const clear = document.querySelector("#all-clear");
 
-// This is a variable for buttons
+// This variable is for all buttons
 const buttons = document.querySelector("#buttons");
+
+// This event listener monitors the buttons of the calculator
+buttons.addEventListener("click", (event) => {
+  let targetBtn = event.target;
+
+  // The actions that will be taken when one of the digital buttons is clicked
+  if (targetBtn.className === "digit") {
+    if (num1) num1 += targetBtn.textContent;
+    else num1 = targetBtn.textContent;
+    if (display.textContent) display.textContent += targetBtn.textContent;
+    else display.textContent = targetBtn.textContent;
+  }
+});
