@@ -30,23 +30,7 @@ function operate(num1, num2, op) {
 let num1;
 let num2;
 let op;
-
-// These are the variables for the digit buttons
-// const zero = document.querySelector("#zero");
-// const one = document.querySelector("#one");
-// const two = document.querySelector("#two");
-// const three = document.querySelector("#three");
-// const four = document.querySelector("#four");
-// const five = document.querySelector("#five");
-// const six = document.querySelector("#six");
-// const seven = document.querySelector("#seven");
-// const eight = document.querySelector("#eight");
-// const nine = document.querySelector("#nine");
-// const digits = document.querySelectorAll(".digit");
-
-
-// This is the variable for the clearing button
-// const clear = document.querySelector("#all-clear");
+let result;
 
 // This is the variable for the display
 let display = document.querySelector("#display");
@@ -58,19 +42,33 @@ const buttons = document.querySelector("#buttons");
 buttons.addEventListener("click", (event) => {
   let targetBtn = event.target;
 
-  // The actions that will be taken when one of the digital buttons is clicked
-  if (targetBtn.className === "digit") {
-    if (num1) num1 += targetBtn.textContent;
-    else num1 = targetBtn.textContent;
-    if (display.textContent) display.textContent += targetBtn.textContent;
-    else display.textContent = targetBtn.textContent;
+  // The actions to take when there is no values of calculating variables
+  if (!(num1 || op || num2)) {
+    if (targetBtn.className === "digit") {
+      num1 = targetBtn.textContent;
+      display.textContent = targetBtn.textContent;
+    }
   }
 
+  // The actions to take when there is only num1 has a value
+
+  // The actions to take when there are num1 and op have values
+
+  // The actions to take when all calculating variables have values
+
+  // The actions that will be taken when one of the digital buttons is clicked
+  // if (targetBtn.className === "digit") {
+  //   if (num1) num1 += targetBtn.textContent;
+  //   else num1 = targetBtn.textContent;
+  //   if (display.textContent) display.textContent += targetBtn.textContent;
+  //   else display.textContent = targetBtn.textContent;
+  // }
+
   // The actions will be taken when the clear button is clicked
-  if (targetBtn.id === "all-clear") {
-    num1 = null;
-    num2 = null;
-    op = null;
-    display.textContent = "";
-  }
+  // if (targetBtn.id === "all-clear") {
+  //   num1 = null;
+  //   num2 = null;
+  //   op = null;
+  //   display.textContent = "";
+  // }
 });
