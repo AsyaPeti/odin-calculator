@@ -42,10 +42,13 @@ let op;
 // const seven = document.querySelector("#seven");
 // const eight = document.querySelector("#eight");
 // const nine = document.querySelector("#nine");
-const digits = document.querySelectorAll(".digit");
+// const digits = document.querySelectorAll(".digit");
 
 // This is the variable for the display
 const display = document.querySelector("#display");
 
 // This is the variable for the clearing button
-const clear = document.querySelector("#all-clear");
+// const clear = document.querySelector("#all-clear");
+
+// This is a variable for buttons
+const buttons = document.querySelector("#buttons");
