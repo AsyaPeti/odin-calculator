@@ -34,6 +34,7 @@ function round(result) {
   
   } else if (String(Math.abs(result)).length > 16) {
       const dec = 16 - 1 - String(Math.abs(Math.trunc(result))).length;
+      
       if (dec > 0) {
         return String(parseFloat(result.toFixed(dec)));
       } else {
@@ -115,13 +116,23 @@ buttons.addEventListener("click", (event) => {
 
   // The actions to take when all calculating variables have values
   } else if (num1 && op && num2) {
-    if ((targetBtn.className === "digit") && (num2.length < 16)) {
-      if (+num2) {
-        num2 += targetBtn.textContent;
-        display.textContent += targetBtn.textContent;
-      } else {
-        num2 = targetBtn.textContent;
+    if (targetBtn.className === "digit") {
+      if (equals) {
+        num1 = targetBtn.textContent;
         display.textContent = targetBtn.textContent;
+        op = null;
+        num2 = null;
+        result = null;
+        equals = false;
+      
+      } else if (num2.length < 16) {
+        if (+num2) {
+          num2 += targetBtn.textContent;
+          display.textContent += targetBtn.textContent;
+        } else {
+          num2 = targetBtn.textContent;
+          display.textContent = targetBtn.textContent;
+        }
       }
     }
 
@@ -129,6 +140,7 @@ buttons.addEventListener("click", (event) => {
       if (equals) {
         op = targetBtn.textContent;
         num2 = null;
+        result = null;
         equals = false;
       } else {
         result = operate(num1, num2, op);
@@ -136,8 +148,7 @@ buttons.addEventListener("click", (event) => {
         display.textContent = round(result);
         op = targetBtn.textContent;
         num2 = null;
-      }
-      
+      } 
     }
 
     if (targetBtn.id === "calculate") {
