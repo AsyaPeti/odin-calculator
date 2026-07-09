@@ -32,6 +32,10 @@ button {
   font-size: 24px;
 }
 
+button * {
+  pointer-events: none;
+}
+
 .smaller {
   font-size: 16px;
 }
