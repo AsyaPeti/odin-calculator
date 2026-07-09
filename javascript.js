@@ -28,10 +28,20 @@ function operate(num1, num2, op) {
 
 // This function limits the number of digits
 function round(result) {
-  if (result < 10000000000) {
-    return +result.toFixed(10);
+  if ((result < Number.MIN_SAFE_INTEGER) ||
+    (Number.MAX_SAFE_INTEGER < result)) {
+    return "Error!";
+  
+  } else if (String(Math.abs(result)).length > 16) {
+      const dec = 16 - 1 - String(Math.abs(Math.trunc(result))).length;
+      if (dec > 0) {
+        return String(parseFloat(result.toFixed(dec)));
+      } else {
+        return String(Math.round(result));
+      }
+
   } else {
-    return result.toExponential(10);
+    return String(parseFloat(result.toFixed(14)));
   }
 }
 
@@ -52,7 +62,7 @@ const buttons = document.querySelector("#buttons");
 buttons.addEventListener("click", (event) => {
   let targetBtn = event.target;
 
-  if (targetBtn.id === "all-clear") {
+  if ((targetBtn.id === "all-clear") || (display.textContent === "Error!")) {
       num1 = null;
       op = null;
       num2 = null;
@@ -69,11 +79,11 @@ buttons.addEventListener("click", (event) => {
 
   // The actions to take when there is only num1 has a value
   } else if (num1 && !(op || num2)) {
-    if (targetBtn.className === "digit") {
-      if (+num1 && +num1 < 10000000000) {
+    if ((targetBtn.className === "digit") && (num1.length < 16)) {
+      if (+num1) {
         num1 += targetBtn.textContent;
         display.textContent += targetBtn.textContent;
-      } else if (+num1 < 10000000000) {
+      } else {
         num1 = targetBtn.textContent;
         display.textContent = targetBtn.textContent;
       }
@@ -104,11 +114,11 @@ buttons.addEventListener("click", (event) => {
 
   // The actions to take when all calculating variables have values
   } else if (num1 && op && num2) {
-    if (targetBtn.className === "digit") {
-      if (+num2 && +num2 < 10000000000) {
+    if ((targetBtn.className === "digit") && (num2.length < 16)) {
+      if (+num2) {
         num2 += targetBtn.textContent;
         display.textContent += targetBtn.textContent;
-      } else if (+num2 < 10000000000) {
+      } else {
         num2 = targetBtn.textContent;
         display.textContent = targetBtn.textContent;
       }
