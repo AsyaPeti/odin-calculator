@@ -82,16 +82,24 @@ buttons.addEventListener("click", (event) => {
     if ((targetBtn.className === "digit") && (num1.length < 16)) {
       if (+num1) {
         num1 += targetBtn.textContent;
-        display.textContent = num1;
       } else {
         num1 = targetBtn.textContent;
-        display.textContent = num1;
       }
+      display.textContent = num1;
     }
 
     if ((targetBtn.id === "point") &&
       !num1.includes(".") && (num1.length < 16)) {
       num1 += targetBtn.textContent;
+      display.textContent = num1;
+    }
+
+    if (targetBtn.id === "sign-toggle") {
+      if (num1[0] === "-") {
+        num1 = num1.slice(1);
+      } else {
+        num1 = "-" + num1.slice();
+      }
       display.textContent = num1;
     }
 
@@ -101,8 +109,6 @@ buttons.addEventListener("click", (event) => {
     }
 
     if (targetBtn.className === "operator") {
-      console.log(targetBtn);
-      console.log(targetBtn.textContent);
       op = targetBtn.textContent;
     }
 
@@ -138,11 +144,10 @@ buttons.addEventListener("click", (event) => {
       } else if (num2.length < 16) {
         if (+num2) {
           num2 += targetBtn.textContent;
-          display.textContent = num2;
         } else {
           num2 = targetBtn.textContent;
-          display.textContent = num2;
         }
+        display.textContent = num2;
       }
     }
 
@@ -152,7 +157,16 @@ buttons.addEventListener("click", (event) => {
       display.textContent = num2;
     }
 
-    if (targetBtn.id === "backspace") {
+    if ((targetBtn.id === "sign-toggle") && !equals) {
+      if (num2[0] === "-") {
+        num2 = num2.slice(1);
+      } else {
+        num2 = "-" + num2.slice();
+      }
+      display.textContent = num2;
+    }
+
+    if ((targetBtn.id === "backspace") && !equals) {
       num2 = num2.slice(0, num2.length - 1);
       display.textContent = num2;
     }
