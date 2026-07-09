@@ -76,7 +76,7 @@ buttons.addEventListener("click", (event) => {
   } else if (!(num1)) {
     if (targetBtn.className === "digit") {
       num1 = targetBtn.textContent;
-      display.textContent = targetBtn.textContent;
+      display.textContent = num1;
     }    
 
   // The actions to take when there is only num1 has a value
@@ -84,17 +84,22 @@ buttons.addEventListener("click", (event) => {
     if ((targetBtn.className === "digit") && (num1.length < 16)) {
       if (+num1) {
         num1 += targetBtn.textContent;
-        display.textContent += targetBtn.textContent;
+        display.textContent = num1;
       } else {
         num1 = targetBtn.textContent;
-        display.textContent = targetBtn.textContent;
+        display.textContent = num1;
       }
     }
 
     if ((targetBtn.id === "point") &&
       !num1.includes(".") && (num1.length < 16)) {
       num1 += targetBtn.textContent;
-      display.textContent += targetBtn.textContent;
+      display.textContent = num1;
+    }
+
+    if (targetBtn.id === "backspace") {
+      num1 = num1.slice(0, num1.length - 1);
+      display.textContent = num1;
     }
 
     if (targetBtn.className === "operator") {
@@ -105,7 +110,7 @@ buttons.addEventListener("click", (event) => {
   } else if (num1 && op && !num2) {
     if (targetBtn.className === "digit") {
       num2 = targetBtn.textContent;
-      display.textContent = targetBtn.textContent;
+      display.textContent = num2;
     }
 
     if (targetBtn.className === "operator") {
@@ -116,7 +121,7 @@ buttons.addEventListener("click", (event) => {
       num2 = num1;
       result = operate(num1, num2, op);
       num1 = round(result);
-      display.textContent = round(result);
+      display.textContent = num1;
       equals = true;
     }
 
@@ -125,7 +130,7 @@ buttons.addEventListener("click", (event) => {
     if (targetBtn.className === "digit") {
       if (equals) {
         num1 = targetBtn.textContent;
-        display.textContent = targetBtn.textContent;
+        display.textContent = num1;
         op = null;
         num2 = null;
         result = null;
@@ -134,10 +139,10 @@ buttons.addEventListener("click", (event) => {
       } else if (num2.length < 16) {
         if (+num2) {
           num2 += targetBtn.textContent;
-          display.textContent += targetBtn.textContent;
+          display.textContent = num2;
         } else {
           num2 = targetBtn.textContent;
-          display.textContent = targetBtn.textContent;
+          display.textContent = num2;
         }
       }
     }
@@ -145,7 +150,12 @@ buttons.addEventListener("click", (event) => {
     if ((targetBtn.id === "point") && !equals &&
       !num2.includes(".") && (num2.length < 16)) {
       num2 += targetBtn.textContent;
-      display.textContent += targetBtn.textContent;
+      display.textContent = num2;
+    }
+
+    if (targetBtn.id === "backspace") {
+      num2 = num2.slice(0, num2.length - 1);
+      display.textContent = num2;
     }
 
     if (targetBtn.className === "operator") {
@@ -157,7 +167,7 @@ buttons.addEventListener("click", (event) => {
       } else {
         result = operate(num1, num2, op);
         num1 = round(result);
-        display.textContent = round(result);
+        display.textContent = num1;
         op = targetBtn.textContent;
         num2 = null;
       } 
@@ -166,7 +176,7 @@ buttons.addEventListener("click", (event) => {
     if (targetBtn.id === "calculate") {
       result = operate(num1, num2, op);
       num1 = round(result);
-      display.textContent = round(result);
+      display.textContent = num1;
       equals = true;
     }
   }
