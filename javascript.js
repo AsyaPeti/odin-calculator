@@ -91,6 +91,12 @@ buttons.addEventListener("click", (event) => {
       }
     }
 
+    if ((targetBtn.id === "point") &&
+      !num1.includes(".") && (num1.length < 16)) {
+      num1 += targetBtn.textContent;
+      display.textContent += targetBtn.textContent;
+    }
+
     if (targetBtn.className === "operator") {
       op = targetBtn.textContent;
     }
@@ -134,6 +140,12 @@ buttons.addEventListener("click", (event) => {
           display.textContent = targetBtn.textContent;
         }
       }
+    }
+
+    if ((targetBtn.id === "point") && !equals &&
+      !num2.includes(".") && (num2.length < 16)) {
+      num2 += targetBtn.textContent;
+      display.textContent += targetBtn.textContent;
     }
 
     if (targetBtn.className === "operator") {
