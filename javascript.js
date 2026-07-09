@@ -29,8 +29,8 @@ function operate(num1, num2, op) {
 // This function limits the number of digits
 function round(result) {
   if ((result < Number.MIN_SAFE_INTEGER) ||
-    (Number.MAX_SAFE_INTEGER < result)) {
-    return "Error!";
+    (Number.MAX_SAFE_INTEGER < result) || Number.isNaN(result)) {
+    return "Out of range!";
   
   } else if (String(Math.abs(result)).length > 16) {
       const dec = 16 - 1 - String(Math.abs(Math.trunc(result))).length;
@@ -62,7 +62,8 @@ const buttons = document.querySelector("#buttons");
 buttons.addEventListener("click", (event) => {
   let targetBtn = event.target;
 
-  if ((targetBtn.id === "all-clear") || (display.textContent === "Error!")) {
+  if ((targetBtn.id === "all-clear") ||
+    (display.textContent === "Out of range!")) {
       num1 = null;
       op = null;
       num2 = null;
