@@ -57,6 +57,26 @@ let display = document.querySelector("#display");
 // This variable is for all buttons
 const buttons = document.querySelector("#buttons");
 
+// These are the variables for the buttons that can be pressed with the keyboard
+let backspaceBtn = buttons.querySelector("#backspace");
+let exponentBtn = buttons.querySelector("#exponent");
+let divisionBtn = buttons.querySelector("#division");
+let sevenBtn = buttons.querySelector("#seven");
+let eightBtn = buttons.querySelector("#eight");
+let nineBtn = buttons.querySelector("#nine");
+let multiplicationBtn = buttons.querySelector("#multiplication");
+let fourBtn = buttons.querySelector("#four");
+let fiveBtn = buttons.querySelector("#five");
+let sixBtn = buttons.querySelector("#six");
+let subtractionBtn = buttons.querySelector("#subtraction");
+let oneBtn = buttons.querySelector("#one");
+let twoBtn = buttons.querySelector("#two");
+let threeBtn = buttons.querySelector("#three");
+let additionBtn = buttons.querySelector("#addition");
+let zeroBtn = buttons.querySelector("#zero");
+let pointBtn = buttons.querySelector("#point");
+let calculate = buttons.querySelector("#calculate");
+
 // This event listener monitors the buttons of the calculator
 buttons.addEventListener("click", (event) => {
   let targetBtn = event.target;
