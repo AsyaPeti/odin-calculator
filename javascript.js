@@ -58,6 +58,7 @@ let display = document.querySelector("#display");
 const buttons = document.querySelector("#buttons");
 
 // These are the variables for the buttons that can be pressed with the keyboard
+let allClearBtn = buttons.querySelector("#all-clear");
 let backspaceBtn = buttons.querySelector("#backspace");
 let exponentBtn = buttons.querySelector("#exponent");
 let divisionBtn = buttons.querySelector("#division");
@@ -73,9 +74,40 @@ let oneBtn = buttons.querySelector("#one");
 let twoBtn = buttons.querySelector("#two");
 let threeBtn = buttons.querySelector("#three");
 let additionBtn = buttons.querySelector("#addition");
+let signToggleBtn = buttons.querySelector("#sign-toggle");
 let zeroBtn = buttons.querySelector("#zero");
 let pointBtn = buttons.querySelector("#point");
-let calculate = buttons.querySelector("#calculate");
+let calculateBtn = buttons.querySelector("#calculate");
+
+// This event mimics the action of clicking a button
+let clickEvent = new Event("click", { bubbles: true });
+
+// This event listener tracks which keys are pressed on the keyboard
+window.addEventListener("keydown", (event) => {
+  let targetKey = event.key;
+  console.log(targetKey);
+  if (targetKey === "C") allClearBtn.dispatchEvent(clickEvent);
+  if (targetKey === "Backspace") backspaceBtn.dispatchEvent(clickEvent);
+  if (targetKey === "^") exponentBtn.dispatchEvent(clickEvent);
+  if (targetKey === "/") divisionBtn.dispatchEvent(clickEvent);
+  if (targetKey === "7") sevenBtn.dispatchEvent(clickEvent);
+  if (targetKey === "8") eightBtn.dispatchEvent(clickEvent);
+  if (targetKey === "9") nineBtn.dispatchEvent(clickEvent);
+  if (targetKey === "*") multiplicationBtn.dispatchEvent(clickEvent);
+  if (targetKey === "4") fourBtn.dispatchEvent(clickEvent);
+  if (targetKey === "5") fiveBtn.dispatchEvent(clickEvent);
+  if (targetKey === "6") sixBtn.dispatchEvent(clickEvent);
+  if (targetKey === "-") subtractionBtn.dispatchEvent(clickEvent);
+  if (targetKey === "1") oneBtn.dispatchEvent(clickEvent);
+  if (targetKey === "2") twoBtn.dispatchEvent(clickEvent);
+  if (targetKey === "3") threeBtn.dispatchEvent(clickEvent);
+  if (targetKey === "+") additionBtn.dispatchEvent(clickEvent);
+  if (targetKey === "~") signToggleBtn.dispatchEvent(clickEvent);
+  if (targetKey === "0") zeroBtn.dispatchEvent(clickEvent);
+  if (targetKey === ".") pointBtn.dispatchEvent(clickEvent);
+  if (targetKey === "=" || targetKey === "Enter")
+    calculateBtn.dispatchEvent(clickEvent);
+});
 
 // This event listener monitors the buttons of the calculator
 buttons.addEventListener("click", (event) => {
