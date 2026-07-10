@@ -9,10 +9,12 @@ html {
 body {
   display: flex;
   align-items: center;
-  gap: 3rem;
-  margin: 3rem;
-  background-image: url(vivid-blurred-colorful-wallpaper-background.jpg);
+  justify-content: flex-end;
+  gap: 7.5rem;
+  margin: 10rem 5rem;
+  background-image: url(hgtu_8.jpg);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 #manual {
@@ -39,23 +41,24 @@ h2, #manual p, #manual button{
 }
 
 #calculator {
-  background-color: rgb(120, 120, 120);
-  width: 16.25rem;
+  background-color: hwb(240 77% 12%);
+  width: 17.5rem;
   height: fit-content;
-  padding: 0.75rem;
-  border: 0.1rem solid black;
+  padding: 1rem;
+  border: 0.01rem solid black;
   border-radius: 0.25rem;
 }
 
 #display {
   background-color: white;
-  width: 14.75rem;
-  height: 3rem;
-  border: 0.1rem solid black;
+  width: 15.5rem;
+  height: 4rem;
+  border: 0.01rem solid black;
   border-radius: 0.125rem;
   margin: 0 0 0.75rem 0;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.25rem;
+  padding: 0.5rem;
+  font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -64,15 +67,16 @@ h2, #manual p, #manual button{
 #buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
-  width: 14.75rem;
+  gap: 0.5rem;
+  width: 15.5rem;
 }
 
-#buttons button {
+button {
   width: 3.5rem;
   height: 2.5rem;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
   font-size: 1.5rem;
+  border: 0.01rem solid black;
   border-radius: 0.5rem;
 }
 
@@ -80,18 +84,18 @@ button * {
   pointer-events: none;
 }
 
-button#sign-toggle, sup#smaller {
-  font-size: 1rem;
+#backspace, #division, #multiplication, #subtraction, #addition, #calculate, #point {
+  font-size: 2rem;
 }
 
 .digit, #sign-toggle, #point {
-  background-color: #ddfff7;
+  background-color: hwb(214 86% 0%);
 }
 
 .operator, #calculate {
-  background-color: #93e1d8;
+  background-color: hwb(214 66% 0%);
 }
 
 #all-clear, #backspace {
-  background-color: #ffa69e;
+  background-color: hwb(305 78% 10%);
 }
