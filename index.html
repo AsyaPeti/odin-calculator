@@ -8,12 +8,17 @@
     <script src="javascript.js" defer></script>
   </head>
   <body>
+    <div id="manual">
+      <h2>Manual</h2>
+      <button id="open-close-manual">+</button>
+      <p id="hidden">This simple calculator can perform the following operations: addition, subtraction, division, multiplication, and exponentiation.<br>You will receive a message if the calculation result falls outside the range of ±9,007,199,254,740,991. Press any button to start again. Numbers smaller than 1×10<sup>-14</sup> are rounded down to zero.<br>You can operate the calculator using a mouse, keyboard, number pad, or by touch if your device supports it. You can enter no more than 16 characters. Use the following symbols to perform the corresponding action:<br>"C" to clear<br>"Backspace" to delete<br>"~" to toggle the sign<br>"^" to exponentially increase<br>"/" to divide<br>"*" to multiply<br>"+" to add<br>"-" to subtract<br>"=" or "Enter" to calculate</p>
+    </div>
     <div id="calculator">
       <p id="display"></p>
       <div id="buttons">
         <button id="all-clear">AC</button>
         <button id="backspace">←</button>
-        <button class="operator" id="exponent">x<sup class="smaller">y</sup></button>
+        <button class="operator" id="exponent">x<sup id="smaller">y</sup></button>
         <button class="operator" id="division">÷</button>
         <button class="digit" id="seven">7</button>
         <button class="digit" id="eight">8</button>
@@ -27,7 +32,7 @@
         <button class="digit" id="two">2</button>
         <button class="digit" id="three">3</button>
         <button class="operator" id="addition">+</button>
-        <button id="sign-toggle" class="smaller">+/−</button>
+        <button id="sign-toggle">+/−</button>
         <button class="digit" id="zero">0</button>
         <button id="point">.</button>
         <button id="calculate">=</button>

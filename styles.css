@@ -35,12 +35,11 @@ html {
   width: 215px;
 }
 
-button {
+#buttons button {
   width: 50px;
   height: 40px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 24px;
-  /* border: 1px solid darkgray; */
   border-radius: 8px;
 }
 
@@ -48,7 +47,7 @@ button * {
   pointer-events: none;
 }
 
-.smaller {
+button#sign-toggle, sup#smaller {
   font-size: 16px;
 }
 
