@@ -88,7 +88,7 @@ button * {
   flex-direction: column;
   gap: 0.5rem;
   flex: none;
-  width: 25rem;
+  width: 27.5rem;
   padding: 0.5rem;
   border: 0.25rem solid hwb(240 77% 12%);
   border-radius: 0.25rem;
