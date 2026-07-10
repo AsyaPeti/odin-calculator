@@ -6,11 +6,21 @@ html {
   box-sizing: inherit;
 }
 
+#calculator {
+  background-color: rgb(120, 120, 120);
+  width: 235px;
+  padding: 10px;
+  border: 1.6px solid black;
+  border-radius: 4px;
+}
+
 #display {
+  background-color: white;
   width: 215px;
   height: 50px;
   border: 1.6px solid black;
-  margin: 0 0 5px 0;
+  border-radius: 2px;
+  margin: 0 0 10px 0;
   font-family: 'Courier New', Courier, monospace;
   font-size: 20px;
   display: flex;
@@ -27,9 +37,11 @@ html {
 
 button {
   width: 50px;
-  height: 50px;
+  height: 40px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 24px;
+  /* border: 1px solid darkgray; */
+  border-radius: 8px;
 }
 
 button * {
@@ -38,4 +50,16 @@ button * {
 
 .smaller {
   font-size: 16px;
+}
+
+.digit, #sign-toggle, #point {
+  background-color: #ddfff7;
+}
+
+.operator, #calculate {
+  background-color: #93e1d8;
+}
+
+#all-clear, #backspace {
+  background-color: #ffa69e;
 }
