@@ -245,6 +245,4 @@ buttons.addEventListener("click", (event) => {
       equals = true;
     }
   }
-  
-  console.log(num1, op, num2, result, equals);
 });
