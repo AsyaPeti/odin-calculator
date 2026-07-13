@@ -9,7 +9,7 @@ html {
 body {
   display: flex;
   align-items: center;
-  gap: 7.5rem;
+  gap: clamp(1rem, 6vw, 10rem);
   padding: 15rem 0;
   margin: 0;
   background-image: url(background.jpg);
@@ -94,7 +94,7 @@ button#division, button#multiplication, button#subtraction, button#addition, but
 #manual {
   flex: 1;
   display: flex;
-  gap: 5rem;
+  gap: clamp(1rem, 4vw, 10rem);
 }
 
 #manual-text {
