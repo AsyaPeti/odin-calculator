@@ -11,7 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10rem 0;
+  padding: 15rem 0;
   margin: 0;
   background-image: url(background.jpg);
   background-size: cover;
@@ -19,12 +19,11 @@ body {
 }
 
 #calculator {
-  width: 17.5rem;
+  width: 24.25rem;
   height: fit-content;
   padding: 1rem;
   border: 0.05rem solid white;
-  border-radius: 0.25rem;
-  margin-top: 2.5rem;
+  border-radius: 0.5rem;
   background-color: hwb(240 77% 12%);
 }
 
@@ -32,31 +31,31 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  width: 15.5rem;
-  height: 3.5rem;
+  width: 22.25rem;
+  height: 5rem;
   padding: 0.5rem;
   border: none;
-  border-radius: 0.125rem;
-  margin: 0 0 0.75rem 0;
+  border-radius: 0.25rem;
+  margin: 0 0 1rem 0;
   background-color: white;
   font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
 }
 
 #buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  width: 15.5rem;
+  gap: 0.75rem;
+  width: 22.25rem;
 }
 
 #buttons button {
-  width: 3.5rem;
-  height: 2.5rem;
+  width: 5rem;
+  height: 3.5rem;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 button {
@@ -80,27 +79,27 @@ button * {
 }
 
 button#backspace, button#point{
-  font-size: 2.25rem;
+  font-size: 2.75rem;
 }
 
 button#division, button#multiplication, button#subtraction, button#addition, button#calculate {
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 #manual {
   position: absolute;
   right: 0;
   display: flex;
-  gap: 10rem;
+  gap: 7.5rem;
 }
 
 #manual-text {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  flex: none;
-  width: 27.5rem;
+  flex-basis: 30rem;
   padding: 0.5rem;
+  font-size: 1.1rem;
   font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -118,4 +117,7 @@ h2, #manual p{
   border-right: none;
   border-radius: 0.25rem;
   background-color: white;
+  font-size: 1rem;
+  font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.25rem;
 }
