@@ -7,11 +7,11 @@ html {
 }
 
 body {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 5rem;
-  padding: 9rem 7rem;
+  justify-content: center;
+  padding: 10rem 0;
   margin: 0;
   background-image: url(background.jpg);
   background-size: cover;
@@ -50,13 +50,17 @@ body {
   width: 15.5rem;
 }
 
-button {
+#buttons button {
   width: 3.5rem;
   height: 2.5rem;
   border: none;
   border-radius: 0.5rem;
   font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
   font-size: 1.5rem;
+}
+
+button {
+  cursor: pointer;
 }
 
 button * {
@@ -75,26 +79,43 @@ button * {
   background-color: hwb(214 86% 0%);
 }
 
-#backspace, #point{
+button#backspace, button#point{
   font-size: 2.25rem;
 }
 
-#division, #multiplication, #subtraction, #addition, #calculate {
+button#division, button#multiplication, button#subtraction, button#addition, button#calculate {
   font-size: 2rem;
 }
 
 #manual {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 10rem;
+}
+
+#manual-text {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   flex: none;
   width: 27.5rem;
   padding: 0.5rem;
-  border: 0.25rem solid hwb(240 77% 12%);
-  border-radius: 0.25rem;
   font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
 }
 
 h2, #manual p{
   margin: 0;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+#manual-toggle {
+  height: fit-content;
+  border: 0.25rem solid hwb(240 77% 12%);
+  border-right: none;
+  border-radius: 0.25rem;
+  background-color: white;
 }

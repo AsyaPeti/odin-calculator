@@ -246,3 +246,11 @@ buttons.addEventListener("click", (event) => {
     }
   }
 });
+
+// This event is for the manual button that shows or hides the manual
+let manualTxt = document.querySelector("#manual-text");
+let manualBtn = document.querySelector("#manual-toggle");
+
+manualBtn.addEventListener("click", () => {
+  manualTxt.classList.toggle("hidden");
+});
