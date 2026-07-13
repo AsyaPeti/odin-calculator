@@ -43,7 +43,7 @@ body {
   margin: 0 0 1.5rem 0;
   background-color: white;
   font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 }
 
 #buttons {
@@ -59,7 +59,7 @@ body {
   border: none;
   border-radius: 1rem;
   font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 }
 
 button {
@@ -89,10 +89,6 @@ button#backspace, button#point{
 button#division, button#multiplication, button#subtraction,
 button#addition, button#calculate {
   font-size: 3rem;
-}
-
-button#sign-toggle {
-  font-size: 2.25rem;
 }
 
 #manual {
