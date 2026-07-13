@@ -132,7 +132,7 @@ buttons.addEventListener("click", (event) => {
   // The actions to take when there is only num1 has a value
   } else if (num1 && !(op || num2)) {
     if ((targetBtn.className === "digit") && (num1.length < 16)) {
-      if (+num1) {
+      if (num1 !== "0") {
         num1 += targetBtn.textContent;
       } else {
         num1 = targetBtn.textContent;
@@ -194,7 +194,7 @@ buttons.addEventListener("click", (event) => {
         result = null;
         equals = false;
       } else if (num2.length < 16) {
-        if (+num2) {
+        if (num2 !== "0") {
           num2 += targetBtn.textContent;
         } else {
           num2 = targetBtn.textContent;
