@@ -9,14 +9,13 @@ html {
 body {
   display: flex;
   align-items: center;
-  gap: clamp(1rem, 6vw, 10rem);
-  padding: 15rem 0;
+  gap: 6vw;
+  padding: 10rem 0;
   margin: 0;
   background-image: url(background.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
-
 
 .spacer {
   flex: 1;
@@ -24,9 +23,9 @@ body {
 
 #calculator {
   flex: none;
-  width: 24.25rem;
+  width: 25.25rem;
   height: fit-content;
-  padding: 1rem;
+  padding: 1.5rem;
   border: 0.05rem solid white;
   border-radius: 0.5rem;
   background-color: hwb(240 77% 12%);
@@ -41,7 +40,7 @@ body {
   padding: 0.5rem;
   border: none;
   border-radius: 0.25rem;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
   background-color: white;
   font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
   font-size: 2.5rem;
@@ -60,7 +59,7 @@ body {
   border: none;
   border-radius: 1rem;
   font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 button {
@@ -84,36 +83,37 @@ button * {
 }
 
 button#backspace, button#point{
-  font-size: 2.75rem;
+  font-size: 3.25rem;
 }
 
-button#division, button#multiplication, button#subtraction, button#addition, button#calculate {
-  font-size: 2.5rem;
+button#division, button#multiplication, button#subtraction,
+button#addition, button#calculate {
+  font-size: 3rem;
 }
 
 #manual {
   flex: 1;
   display: flex;
-  gap: clamp(1rem, 4vw, 10rem);
+  gap: 4vw;
 }
 
 #manual-text {
-  display: flex;
   flex: none;
+  display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 30rem;
   padding: 0.5rem;
-  font-size: 1.1rem;
   font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
-}
-
-h2, #manual p{
-  margin: 0;
+  font-size: 1.25rem;
 }
 
 .hidden {
   visibility: hidden;
+}
+
+h2, #manual p{
+  margin: 0;
 }
 
 #manual-toggle {
@@ -121,9 +121,9 @@ h2, #manual p{
   border: 0.25rem solid hwb(240 77% 12%);
   border-right: none;
   border-radius: 0.25rem;
-  background-color: white;
-  font-size: 1rem;
-  font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
-  line-height: 1.25rem;
   margin-left: auto;
+  background-color: white;
+  font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
 }
