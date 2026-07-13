@@ -7,10 +7,9 @@ html {
 }
 
 body {
-  position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 7.5rem;
   padding: 15rem 0;
   margin: 0;
   background-image: url(background.jpg);
@@ -18,7 +17,13 @@ body {
   background-attachment: fixed;
 }
 
+
+.spacer {
+  flex: 1;
+}
+
 #calculator {
+  flex: none;
   width: 24.25rem;
   height: fit-content;
   padding: 1rem;
@@ -87,17 +92,17 @@ button#division, button#multiplication, button#subtraction, button#addition, but
 }
 
 #manual {
-  position: absolute;
-  right: 0;
+  flex: 1;
   display: flex;
-  gap: 7.5rem;
+  gap: 5rem;
 }
 
 #manual-text {
   display: flex;
+  flex: none;
   flex-direction: column;
   gap: 0.5rem;
-  flex-basis: 30rem;
+  width: 30rem;
   padding: 0.5rem;
   font-size: 1.1rem;
   font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
@@ -120,4 +125,5 @@ h2, #manual p{
   font-size: 1rem;
   font-family: Garamond, Georgia, 'Times New Roman', Times, serif;
   line-height: 1.25rem;
+  margin-left: auto;
 }
